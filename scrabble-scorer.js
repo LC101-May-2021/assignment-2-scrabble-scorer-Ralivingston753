@@ -34,7 +34,7 @@ function oldScrabbleScorer(word) {
 
 function initialPrompt() {
    let word = input.question("Let's play some scrabble! Enter a word: ");
-   console.log(vowelBonusScorer(word));
+   console.log(simpleScorer(word));
 };
 
 let simpleScore = {
@@ -44,16 +44,10 @@ function simpleScorer(word){
   word = word.toUpperCase();
 	let letterPoints = "";
  
-	for (let i = 0; i < word.length; i++) {
- 
 	  for (const pointValue in simpleScore) {
- 
-		 if (simpleScore[pointValue].includes(word[i])) {
-			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
-		 }
- 
+			letterPoints += `Score: ${word.length} points`
 	  }
-	}
+	
 	return letterPoints;
  }
 
