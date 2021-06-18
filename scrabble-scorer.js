@@ -34,17 +34,17 @@ function oldScrabbleScorer(word) {
 
 function initialPrompt() {
    let word = input.question("Let's play some scrabble! Enter a word: ");
-   console.log(vowelBonusScorer(word))
+   console.log(vowelBonusScore(word))
 };
 
-let simpleScore = {
+let simpleScorer = {
   1: ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']};
 
-function simpleScorer(word){
+function simpleScore(word){
   word = word.toUpperCase();
 	let letterPoints = "";
  
-	  for (const pointValue in simpleScore) {
+	  for (const pointValue in simpleScorer) {
 			letterPoints += `Score for '${word.toLowerCase()}': ${word.length} points`
 	  }
 	
@@ -52,14 +52,14 @@ function simpleScorer(word){
  }
 
 
-let vowelBonusScore = ['A','E','I','O','U']
+let vowelBonus = ['A','E','I','O','U']
 
-function vowelBonusScorer(word){
+function vowelBonusScore(word){
   word = word.toUpperCase();
 	let letterPoints = 0;
  
 	for (let i = 0; i < word.length; i++) {
-		 if (vowelBonusScore.includes(word[i])) {
+		 if (vowelBonus.includes(word[i])) {
 			    letterPoints += 3
        }else{
          letterPoints += 1
@@ -70,25 +70,10 @@ function vowelBonusScorer(word){
 
 let scrabbleScore;
 
-const scoringAlgorithms = [
-  simpleScore = {
-   name: "Simple Score: ",
-   description: " Each letter is worth 1 point.",
-   scoringFunction: "simple score"
-   },
-   bonusVowel = {
-     name: "Bonus Vowel",
-     description: " Vowels are 3 pts, consonants are 1 pt.",
-    scoringFunction: "vowelBonusScorer"
-  },
- scrabble = {
-     name: "Scrabble:",
-    description:" The traditional scoring algorithm.",
-     scoringFunction: "oldScrabbleScorer"
-  }];
+const scoringAlgorithms = [];
 
 function scorerPrompt() {
-}
+};
 
 function transform() {};
 
