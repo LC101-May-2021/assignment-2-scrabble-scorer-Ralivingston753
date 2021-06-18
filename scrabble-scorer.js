@@ -70,7 +70,22 @@ function vowelBonusScorer(word){
 
 let scrabbleScore;
 
-const scoringAlgorithms = [];
+const scoringAlgorithms = [
+  simpleScore = {
+   name: "Simple Score: ",
+   description: " Each letter is worth 1 point.",
+   scoringFunction: function simpleScorer(word);
+   },
+   bonusVowel = {
+     name: "Bonus Vowel",
+     description: " Vowels are 3 pts, consonants are 1 pt.",
+    scoringFunction: "vowelBonusScorer"
+  },
+ scrabble = {
+     name: "Scrabble:",
+    description:" The traditional scoring algorithm.",
+     scoringFunction: "oldScrabbleScorer"
+  }];
 
 function scorerPrompt() {
 }
