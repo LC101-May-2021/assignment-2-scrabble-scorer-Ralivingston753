@@ -74,7 +74,7 @@ const scoringAlgorithms = [
   simpleScore = {
    name: "Simple Score: ",
    description: " Each letter is worth 1 point.",
-   scoringFunction: "simple score";
+   scoringFunction: "simple score"
    },
    bonusVowel = {
      name: "Bonus Vowel",
