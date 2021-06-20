@@ -31,19 +31,6 @@ function oldScrabbleScorer() {
 	return letterPoints;
  }
 
-
-function scrabbleScorer() {
-	word = word.toUpperCase();
-	let letterPoints = 0;
- 
-	for (let i = 0; i < word.length; i++) {
-			//letterPoints += `Points for '${word[i]}': ${newPointStructure//[word[i]]}\n`
-      letterPoints+= Number(newPointStructure[word[i]]);
-      
-		 }
- 	return letterPoints;
-}
-
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
 
@@ -82,7 +69,18 @@ function vowelBonusScore(){
 	return Number(letterPoints);
  }
 
-let scrabbleScore;
+function scrabbleScore() {
+	word = word.toUpperCase();
+	let letterPoints = 0;
+ 
+	for (let i = 0; i < word.length; i++) {
+			//letterPoints += `Points for '${word[i]}': ${newPointStructure//[word[i]]}\n`
+      letterPoints+= Number(newPointStructure[word[i]]);
+      
+		 }
+ 	return letterPoints;
+}
+
 
 const scoringAlgorithms = [
  simpleScore = ({
@@ -98,7 +96,7 @@ const scoringAlgorithms = [
   scrabbleScore = ({
      name: 'Scrabble:',
      description:' The traditional scoring algorithm. ',
-     scoringFunction: scrabbleScorer
+     scoringFunction: scrabbleScore
   })
 
 ]
