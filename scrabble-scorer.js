@@ -2,6 +2,7 @@
 
 const input = require("readline-sync");
 let word = "";
+let newPointStructure ={};
 
 const oldPointStructure = {
   1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
@@ -29,6 +30,19 @@ function oldScrabbleScorer() {
 	}
 	return letterPoints;
  }
+
+
+function scrabbleScorer() {
+	word = word.toUpperCase();
+	let letterPoints = 0;
+ 
+	for (let i = 0; i < word.length; i++) {
+			//letterPoints += `Points for '${word[i]}': ${newPointStructure//[word[i]]}\n`
+      letterPoints+= Number(newPointStructure[word[i]]);
+      
+		 }
+ 	return letterPoints;
+}
 
 // your job is to finish writing these functions and variables that we've named //
 // don't change the names or your program won't work as expected. //
@@ -72,19 +86,19 @@ let scrabbleScore;
 
 const scoringAlgorithms = [
  simple = {
-   name: "Simple Score",
-   description: " Each letter is worth 1 point.",
+   name: 'Simple Score',
+   description: ' Each letter is worth 1 point.',
    scoringFunction: simpleScore
    }, 
  bonus = {
-     name: "Bonus Vowel",
-     description: " Vowels are 3 pts, consonants are 1 pt.",
+     name: 'Bonus Vowel',
+     description: ' Vowels are 3 pts, consonants are 1 pt.',
     scoringFunction: vowelBonusScore
   },
   scrabble = {
      name: "Scrabble:",
-     description:" The traditional scoring algorithm.",
-     scoringFunction: oldScrabbleScorer
+     description:' The traditional scoring algorithm.',
+     scoringFunction: scrabbleScorer
   }
 
 ];
@@ -98,16 +112,26 @@ function scorerPrompt(word) {
 Enter 0, 1, or 2:`)
 
 console.log(`algorithm name: ${scoringAlgorithms[num].name}\n`);
-console.log(`Total : ${scoringAlgorithms[num].scoringFunction(word)}`);
+console.log(`Score for '${word}': ${scoringAlgorithms[num].scoringFunction(word)}`);
 };
 
-function transform() {};
+function transform(oldPointStructure) {
 
-let newPointStructure;
+  for (const j in oldPointStructure){
+    for (const k in oldPointStructure[j]) {
+      newPointStructure[oldPointStructure[j][k]] = j; 
+    } 
+    
+  }
+  console.log(newPointStructure);
+};
+
+
 
 function runProgram() {
+  transform(oldPointStructure);
    initialPrompt();
-   scorerPrompt();
+   scorerPrompt(word);
 }
 
 // Don't write any code below this line //
