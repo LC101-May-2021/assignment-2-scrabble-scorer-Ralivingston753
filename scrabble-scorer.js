@@ -95,7 +95,7 @@ function scorerPrompt(word) {
 0 - Simple: One point per character.
 1 - Vowel Bonus: Vowels are worth 3 points, consonants are 1 pt.
 2 - Scrabble: Uses scrabble point system.
-Enter 0, 1, or 2:`)
+Enter 0, 1, or 2: `)
 
 console.log(`Score for '${word}': ${scoringAlgorithms[num].scoringFunction(word)}`);
 };
