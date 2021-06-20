@@ -47,7 +47,6 @@ function simpleScore(){
 	  for (const pointValue in simpleScorer) {
 			letterPoints += Number(word.length)
 	  }
-    console.log(simpleScore(word))
 	
 	return letterPoints;
  }
