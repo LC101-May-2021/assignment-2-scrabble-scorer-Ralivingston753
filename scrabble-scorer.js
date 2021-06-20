@@ -74,7 +74,7 @@ const scoringAlgorithms = [
  simple = {
    name: "Simple Score",
    description: " Each letter is worth 1 point.",
-   scoringFunction: oldScrabbleScorer
+   scoringFunction: simpleScore
    }, 
  bonus = {
      name: "Bonus Vowel",
@@ -84,7 +84,7 @@ const scoringAlgorithms = [
   scrabble = {
      name: "Scrabble:",
      description:" The traditional scoring algorithm.",
-     scoringFunction: simpleScore
+     scoringFunction: oldScrabbleScorer
   }
 
 ];
