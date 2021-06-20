@@ -111,7 +111,6 @@ function scorerPrompt(word) {
 2 - Scrabble: Uses scrabble point system
 Enter 0, 1, or 2:`)
 
-console.log(`algorithm name: ${scoringAlgorithms[num].name}\n`);
 console.log(`Score for '${word}': ${scoringAlgorithms[num].scoringFunction(word)}`);
 };
 
@@ -123,7 +122,7 @@ function transform(oldPointStructure) {
     } 
     
   }
-  console.log(newPointStructure);
+  return newPointStructure;
 };
 
 
